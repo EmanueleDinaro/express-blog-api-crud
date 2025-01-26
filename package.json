@@ -1,0 +1,23 @@
+{
+  "name": "express-blog-api-crud",
+  "version": "1.0.0",
+  "description": "Esercizio sulle route, controller, CRUD ecc...",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "watch": "node --watch app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmanueleDinaro/express-blog-api-crud.git"
+  },
+  "author": "Emanuele Dinaro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmanueleDinaro/express-blog-api-crud/issues"
+  },
+  "homepage": "https://github.com/EmanueleDinaro/express-blog-api-crud#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
