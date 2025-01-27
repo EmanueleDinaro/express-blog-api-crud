@@ -5,7 +5,6 @@ const index = (req, res) => {
     res.json(foodsData)
 }
 
-
 //show
 const show = (req, res) => {
     const id = Number(req.params.id)
@@ -24,7 +23,19 @@ const show = (req, res) => {
 
 //store
 const store = (req, res) => {
-    res.send('Creazione di un nuovo alimento')
+    const id = foodsData[foodsData.length - 1].id + 1
+    
+    const newFood = {
+        id,
+        title: req.body.title,
+        content: req.body.content,
+        image: req.body.image,
+        tags: req.body.tags
+    }
+    foodsData.push(newFood)
+    
+    res.status(201)
+    res.json(newFood)
 }
 
 //update

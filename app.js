@@ -5,6 +5,7 @@ const port = 3000
 const foodsRouter = require("./Routers/foodsRouters")
 
 app.use(express.static("public"));
+app.use(express.json())
 app.use("/foods", foodsRouter)
 
 app.get('/', (req, res) => {
