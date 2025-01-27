@@ -40,12 +40,46 @@ const store = (req, res) => {
 
 //update
 const update = (req, res) => {
-    res.send('Modifica integrale di un alimento')
+    const id = Number(req.params.id)
+    
+    const food = foodsData.find(food => food.id === id)
+
+    if(!food){
+        res.status(404)
+        
+        return res.json({
+            error: "404 Not Found",
+            message: "L'alimento non è stato trovato"
+        })
+    }
+    food.title = req.body.title,
+    food.content = req.body.content,
+    food.image = req.body.image,
+    food.tags = req.body.tags
+
+    res.json(food)
 }
 
 //modify
 const patch = (req, res) => {
-    res.send('Modifica parziale di un alimento')
+    const id = Number(req.params.id)
+    
+    const food = foodsData.find(food => food.id === id)
+
+    if(!food){
+        res.status(404)
+        
+        return res.json({
+            error: "404 Not Found",
+            message: "L'alimento non è stato trovato"
+        })
+    }
+    food.title = req.body.title || food.title,
+    food.content = req.body.content || food.content,
+    food.image = req.body.image || food.image,
+    food.tags = req.body.tags || food.tags,
+
+    res.json(food)
 }
 
 //delete
