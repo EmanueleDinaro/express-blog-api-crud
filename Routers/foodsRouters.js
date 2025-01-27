@@ -4,8 +4,11 @@ const foodsData = require("../data/foodsData")
 const foodsController = require('../controller/foodsController')
 const foods = require('../data/foodsData')
 
+const notFound = require('../middlewares/notFound')
+
+// router.use('/foods/:id', notFound)
 //INDEX
-router.get('/', foodsController.index)
+router.get('/', notFound, foodsController.index)
 
 //SHOW
 router.get('/:id', foodsController.show)

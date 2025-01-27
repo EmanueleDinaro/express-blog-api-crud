@@ -6,6 +6,7 @@ const foodsRouter = require("./Routers/foodsRouters")
 
 app.use(express.static("public"));
 app.use(express.json())
+// app.use('/:id', notFound)
 app.use("/foods", foodsRouter)
 
 app.get('/', (req, res) => {
