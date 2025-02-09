@@ -1,28 +1,28 @@
-const express = require('express')
-const router = express.Router()
-const foodsData = require("../data/foodsData")
-const foodsController = require('../controller/foodsController')
-const foods = require('../data/foodsData')
+const express = require("express");
+const router = express.Router();
+const foodsData = require("../data/foodsData");
+const foodsController = require("../controller/foodsController");
+const foods = require("../data/foodsData");
 
-const notFound = require('../middlewares/notFound')
+const notFound = require("../middlewares/notFound");
 
 // router.use('/foods/:id', notFound)
 //INDEX
-router.get('/', notFound, foodsController.index)
+router.get("/", foodsController.index);
 
 //SHOW
-router.get('/:id', foodsController.show)
+router.get("/:id", foodsController.show);
 
 //STORE
-router.post('/', foodsController.store)
+router.post("/", foodsController.store);
 
 //UPDATE
-router.put('/:id', foodsController.update)
+router.put("/:id", foodsController.update);
 
 //MODIFY
-router.patch('/:id', foodsController.patch)
+router.patch("/:id", foodsController.patch);
 
 //DELETE
-router.delete('/:id', foodsController.destroy)
+router.delete("/:id", foodsController.destroy);
 
-module.exports = router
+module.exports = router;
